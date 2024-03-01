@@ -26,7 +26,7 @@ class MrbgemTemplate
 
     raise IllegalParameterError, "mrbgem_name is required" if params[:mrbgem_name].nil?
     raise IllegalParameterError, "license is required" if params[:license].nil?
-    raise IllegalParameterError, "github_user is required" if params[:github_user].nil?
+    raise IllegalParameterError, "github_user is required. Please execute 'git config github.user {your github account name}' or use the -u option. " if params[:github_user].nil?
 
     @params = params
     @params[:mrbgem_prefix] = "." if @params[:mrbgem_prefix].nil?
